@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  countory_id: 1
+  code: MyString
+  name: MyString
+  income_date: 2022-01-27
+  dividend_per_share: 1.5
+  shares: 1
+  actual_dividend: 1
+
+two:
+  countory_id: 1
+  code: MyString
+  name: MyString
+  income_date: 2022-01-27
+  dividend_per_share: 1.5
+  shares: 1
+  actual_dividend: 1

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>国名一覧</h1>
+
+<div id="countories">
+  <% @countories.each do |countory| %>
+    <%= render countory %>
+    <p>
+      <%= link_to "国を表示", countory %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "新規国名", new_countory_path %>

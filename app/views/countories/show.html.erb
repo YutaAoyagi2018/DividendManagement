@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @countory %>
+
+<div>
+  <%= link_to "国名を編集", edit_countory_path(@countory) %> |
+  <%= link_to "国名一覧に戻る", countories_path %>
+
+  <%= button_to "国名を削除する", @countory, method: :delete %>
+</div>

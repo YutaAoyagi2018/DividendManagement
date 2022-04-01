@@ -1,0 +1,23 @@
+<div class="container">
+<h1>配当を編集する</h1>
+
+<div class="center">
+<%= render "form", dividend: @dividend %>
+
+<br>
+
+<div>
+  <%= link_to "詳細表示へ戻る", @dividend %> |
+  <%= link_to "配当金一覧へ戻る", dividends_path %>
+</div>
+
+</div>
+</div>
+
+
+<style>
+.center {
+  max-width: 100%;
+  margin: auto;
+}
+</style>

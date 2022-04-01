@@ -1,0 +1,54 @@
+<%= form_with(model: dividend) do |form| %>
+  <% if dividend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(dividend.errors.count, "error") %> prohibited this dividend from being saved:</h2>
+
+      <ul>
+        <% dividend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "国名", style: "display: block" %>
+    <%= form.collection_select(:countory_id, @countories, :id, :name,{}, class: "form-control") %>
+  </div>
+
+  <div>
+    <%= form.label "銘柄コード", style: "display: block" %>
+    <%= form.text_field :code, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label "銘柄名", style: "display: block" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label "入金日", style: "display: block" %>
+    <%= form.date_field :income_date, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label "1株配当（円）", style: "display: block" %>
+    <%= form.text_field :dividend_per_share, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label "株数", style: "display: block" %>
+    <%= form.number_field :shares, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label "入金額（円）", style: "display: block" %>
+    <%= form.number_field :actual_dividend, class: "form-control" %>
+  </div>
+  
+  <br>
+  
+  <div>
+    <%= form.submit "配当金を登録する", class: "btn btn-primary"  %>
+  </div>
+<% end %>

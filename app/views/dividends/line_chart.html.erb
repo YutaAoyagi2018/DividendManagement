@@ -1,0 +1,25 @@
+<div class="container">
+<h1 class="text-center">配当金合計折れ線グラフ</h1>
+<div class="right">
+合計：<%= @sum %>円
+</div>
+<div class="center">
+<%= line_chart @line_chart %>
+</div>
+<br>
+<br>
+<%= link_to "戻る", dividends_path, class: "btn btn-primary" %>
+
+</div>
+
+<style>
+.container {
+  margin-top: 50px;
+}
+.center {
+  border: solid 1px gray;
+}
+.right {
+    text-align: right;
+}
+</style>

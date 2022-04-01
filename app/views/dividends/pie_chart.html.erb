@@ -1,0 +1,45 @@
+<div class="container">
+<h1 class="text-center">配当金合計円グラフ</h1>
+<div class="right">
+合計：<%= @sum %>円
+</div>
+<div class="center">
+<%= pie_chart @pie_chart %>
+</div>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead>
+    <th>銘柄コード</th>
+    <th>銘柄名</th>
+    <th>入金額（円）</th>
+  </thead>
+  <tbody>
+    <% for i in 0..@pie_chart_array.count-1 do %>
+    <tr>
+      <td><%= @pie_chart_array[i][0]%></td>
+      <td><%= Dividend.find_by(code: @pie_chart_array[i][0]).name %></td>
+      <td class="right"><%= @pie_chart_array[i][1].to_s(:delimited)%>円</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>
+<%= link_to "戻る", dividends_path, class: "btn btn-primary" %>
+
+</div>
+
+<style>
+.center {
+  max-width: 100%;
+  margin: auto;
+  border: solid 1px gray;
+}
+.right {
+    text-align: right;
+}
+
+.container {
+  margin-top: 50px;
+}
+</style>
